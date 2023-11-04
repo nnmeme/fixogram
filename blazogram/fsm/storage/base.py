@@ -13,16 +13,16 @@ class UserKey:
 class BaseStorage(ABC):
     @abstractmethod
     async def set_state(self, key: UserKey, state: State) -> None:
-        pass
+        ...
 
     @abstractmethod
     async def get_state(self, key: UserKey) -> State:
-        pass
+        ...
 
     @abstractmethod
     async def get_data(self, key: UserKey) -> dict:
-        pass
+        ...
 
     @abstractmethod
     async def set_data(self, key: UserKey, data: dict) -> dict:
-        pass
+        ...

@@ -7,16 +7,16 @@ class CustomError(Exception):
 
 
 class TelegramBadRequest(CustomError):
-    pass
+    ...
 
 
 class FilterError(CustomError):
-    pass
+    ...
 
 
 class DatabaseError(CustomError):
-    pass
+    ...
 
 
 class KeyboardError(CustomError):
-    pass
+    ...

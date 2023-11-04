@@ -1,5 +1,5 @@
 import asyncio
-from typing import Literal, Union, Tuple
+from typing import Literal, Tuple, Union
 
 from ..database.base import Database
 from ..exceptions import TelegramBadRequest
@@ -38,7 +38,7 @@ class Bot:
                 elif video:
                     await self.send_video(chat_id=user.id, video=video, **data)
             except TelegramBadRequest:
-                pass
+                ...
             number += 1
         return (number, len(users) - number)
 

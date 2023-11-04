@@ -1,4 +1,5 @@
 import asyncio
+from warnings import warn
 
 from aiosqlite import Connection, Cursor, connect
 
@@ -9,6 +10,7 @@ from .base import Database
 
 class SQLite3(Database):
     def __init__(self, connection: Connection):
+        warn("You are using sqlite. It's bad practice. Use Postgres, Nats KV instead.")
         self.connection = connection
         asyncio.create_task(self.start())
 
@@ -22,6 +24,8 @@ class SQLite3(Database):
         await self.request(query=query)
 
     async def request(self, query: str, params: tuple = None):
+        warn("You are using sqlite. It's bad practice. Use Postgres, Nats KV instead.")
+        
         await self.connection.execute(query, params)
         await self.connection.commit()
 

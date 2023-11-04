@@ -1,9 +1,13 @@
+from warnings import warn
+
 from ..types.user import User
 from .base import Database
 
 
 class MemoryDatabase(Database):
     def __init__(self):
+        warn("You are using memody-dict db. It's bad practice. Use Postgres, Nats KV instead.")
+
         self.users: list[User] = []
 
     async def user_exist(self, user: User) -> bool:

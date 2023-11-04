@@ -8,4 +8,4 @@ class BaseMiddleware(ABC):
                        handler: Callable[..., Awaitable[Any]],
                        update: Any,
                        data: dict[str, Any]):
-        pass
+        ...

@@ -16,12 +16,12 @@ class Job:
 class BaseSchedulerStorage(ABC):
     @abstractmethod
     async def add_job(self, job: Job):
-        pass
+        ...
 
     @abstractmethod
     async def get_jobs(self) -> list[Job]:
-        pass
+        ...
 
     @abstractmethod
     async def remove_jobs(self):
-        pass
+        ...
